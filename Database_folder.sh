@@ -25,11 +25,14 @@ sudo apt-get install -y \
 
 
 # Take a back up file for mongod.configure
-sudo cp mongod.conf mongod.conf.bk
+sudo cp /etc/mongod.conf/ etc/mongod.conf.bk
 
-cd /etc
-sudo nano mongod.conf
-export DB_HOST=mongodb://172.31.24.86:27017/posts
+# use sed command:
+sudo sed -i 's/bindIp:127.0.0.1/bindIp: 0.0.0.0/' /etc/mongod.conf
+
+#cd /etc
+#sudo nano mongod.conf
+#export DB_HOST=mongodb://172.31.24.86:27017/posts
 
 sudo systemctl start mongod
 sudo systemctl enable mongod
