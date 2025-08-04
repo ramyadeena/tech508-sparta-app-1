@@ -21,7 +21,7 @@ sudo apt-get install -y \
    mongodb-org-tools=7.0.22 \
    mongodb-org-database-tools-extra=7.0.22
    
-# sudo systemctl status mongodb
+# sudo systemctl status mongod
 
 
 # Take a back up file for mongod.configure
@@ -31,5 +31,5 @@ cd /etc
 sudo nano mongod.conf
 export DB_HOST=mongodb://172.31.24.86:27017/posts
 
-sudo systemctl start mongodb
-sudo systemctl enable mongodb
+sudo systemctl start mongod
+sudo systemctl enable mongod
