@@ -36,7 +36,13 @@ cd repo/app
 export DB_HOST=mongodb://172.31.24.151:27017/posts
 
 #Install package for the app
+#npm install
+
 npm install
+ 
+pm2 kill
+pm2 start npm --name "tech508-sparta-app1" -- start
+pm2 save
 
 # Start app
 npm start
