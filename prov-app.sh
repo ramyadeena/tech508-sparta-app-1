@@ -24,6 +24,9 @@ sudo DEBIAN_FRONTEND=noninteractive apt-get install -y nodejs
 #check node version
 node -v
 
+#Install pm2 globally
+sudo npm install -g pm2
+
 # git clone command
 git clone https://github.com/ramyadeena/tech508-sparta-app-1.git repo
 
@@ -40,9 +43,10 @@ export DB_HOST=mongodb://172.31.24.151:27017/posts
 
 npm install
  
+# Manage app with pm2
 pm2 kill
 pm2 start npm --name "tech508-sparta-app1" -- start
 pm2 save
 
 # Start app
-npm start
+#npm start
