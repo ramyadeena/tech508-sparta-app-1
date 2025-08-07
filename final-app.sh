@@ -36,11 +36,23 @@ echo "Changing to app directory..."
 cd repo/app
 
 echo "Setting environment variable for database connection..."
-export DB_HOST="mongodb://172.31.24.151:27017/posts"
+export DB_HOST=mongodb://172.31.28.46:27017/posts
 
 echo "Installing Node.js packages for the app..."
 npm install
 echo "Packages installed."
 
-echo "Starting application..."
-npm start
+echo "Deleting any existing PM2 process named sparta-app (if any)..."
+pm2 delete all || true
+echo
+ 
+echo "Starting app with PM2 using npm start..."
+pm2 start npm --name "app.js" -- start
+echo "App started and registered with PM2."
+echo
+ 
+echo "Public IP address of this instance:"
+curl -s http://checkip.amazonaws.com
+echo
+ 
+echo "App provisioning complete
