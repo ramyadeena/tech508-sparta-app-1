@@ -27,12 +27,12 @@ npm install -g pm2
 echo
  
 echo "Cloning your Sparta app repo..."
-git clone https://github.com/Geodude132/tech508-george-sparta-app.git repo
+git clone https://github.com/ramyadeena/tech508-sparta-app-1.git repo
 cd repo/app
 echo "Repo cloned and moved into app directory."
 echo
  
-export DB_HOST=mongodb://172.31.19.194:27017/posts
+export DB_HOST=mongodb://172.31.28.46:27017/posts
 echo "Environment variable DB_HOST set."
 echo
  
